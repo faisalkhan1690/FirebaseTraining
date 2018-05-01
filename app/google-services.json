@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "102819083373",
+    "firebase_url": "https://fir-traning-4716f.firebaseio.com",
+    "project_id": "fir-traning-4716f",
+    "storage_bucket": "fir-traning-4716f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102819083373:android:c59e864f60da4ad1",
+        "android_client_info": {
+          "package_name": "com.khan.faisal.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102819083373-7l7nhsdeu3kvfglsr23g66ejpmfoiuih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMH2SO0mhF0mtB5otjWuGcRX1x0YG-f6k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
