@@ -1,22 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="25dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.khan.faisal.myapplication.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Screen One" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Click to start screen two"
-        android:onClick="startScreen"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/login_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loginUser"
+        android:text="Login User"/>
+
+    <Button
+        android:id="@+id/plan_one_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planViewOne"
+        android:text="Plan One View"/>
+    <Button
+        android:id="@+id/plan_two_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planViewTwo"
+        android:text="Plan two View"/>
+
+    <Button
+        android:id="@+id/plan_three_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planViewThree"
+        android:text="Plan three View"/>
+
+    <Button
+        android:id="@+id/plan_one_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planBuyOne"
+        android:text="Plan One Buy"/>
+    <Button
+        android:id="@+id/plan_two_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planBuyTwo"
+        android:text="Plan two Buy"/>
+
+    <Button
+        android:id="@+id/plan_three_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="planBuyThree"
+        android:text="Plan three Buy"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="logout"
+        android:text="logout"/>
+
+</LinearLayout>
