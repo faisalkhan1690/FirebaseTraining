@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.firebase.analytics.FirebaseAnalytics;
+
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+    private Tracker mTracker;
 
     private final String mEventLogin="Event_Login";
     private final String mEventLogout="Event_Logout";
@@ -34,71 +38,113 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
 
     }
 
 
     public void loginUser(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        mFirebaseAnalytics.logEvent(mEventLogin, bundle);
+
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventLogin)
+                .setAction(mEventLogin)
+                .setLabel(mEventLogin)
+                .setAll(dataMap)
+                .build());
     }
 
     public void logout(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        mFirebaseAnalytics.logEvent(mEventLogout, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventLogout)
+                .setAction(mEventLogout)
+                .setLabel(mEventLogout)
+                .setAll(dataMap)
+                .build());
     }
 
     public void planViewOne(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanOne);
-        mFirebaseAnalytics.logEvent(mEventPlanView, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanOne);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanView)
+                .setAction(mEventPlanView)
+                .setLabel(mEventPlanView)
+                .setAll(dataMap)
+                .build());
     }
 
     public void planViewTwo(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanTwo);
-        mFirebaseAnalytics.logEvent(mEventPlanView, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanTwo);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanView)
+                .setAction(mEventPlanView)
+                .setLabel(mEventPlanView)
+                .setAll(dataMap)
+                .build());
 
     }
     public void planViewThree(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanThree);
-        mFirebaseAnalytics.logEvent(mEventPlanView, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanThree);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanView)
+                .setAction(mEventPlanView)
+                .setLabel(mEventPlanView)
+                .setAll(dataMap)
+                .build());
 
     }
     public void planBuyOne(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanOne);
-        mFirebaseAnalytics.logEvent(mEventPlanBuy, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanOne);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanBuy)
+                .setAction(mEventPlanBuy)
+                .setLabel(mEventPlanBuy)
+                .setAll(dataMap)
+                .build());
 
     }
     public void planBuyTwo(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanTwo);
-        mFirebaseAnalytics.logEvent(mEventPlanBuy, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanTwo);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanBuy)
+                .setAction(mEventPlanBuy)
+                .setLabel(mEventPlanBuy)
+                .setAll(dataMap)
+                .build());
 
     }
     public void planBuyThree(View view){
-        Bundle bundle = new Bundle();
-        bundle.putString(mKeySalesPerson, mSalesPersonId);
-        bundle.putString(mKeyCustomerId, mCustomerId);
-        bundle.putString(mKeyPlanID, mPlanThree);
-        mFirebaseAnalytics.logEvent(mEventPlanBuy, bundle);
+        HashMap<String,String> dataMap=new HashMap<>();
+        dataMap.put(mKeySalesPerson, mSalesPersonId);
+        dataMap.put(mKeyCustomerId, mCustomerId);
+        dataMap.put(mKeyPlanID, mPlanThree);
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory(mEventPlanBuy)
+                .setAction(mEventPlanBuy)
+                .setLabel(mEventPlanBuy)
+                .setAll(dataMap)
+                .build());
 
     }
 }
