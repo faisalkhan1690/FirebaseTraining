@@ -8,6 +8,18 @@
     android:gravity="center_horizontal"
     tools:context="com.khan.faisal.myapplication.MainActivity">
 
+    <EditText
+        android:id="@+id/et_sales_person_id"
+        android:hint="Sales person email id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_customer_id"
+        android:layout_width="match_parent"
+        android:hint="Customer email id"
+        android:layout_height="wrap_content" />
+
 
     <Button
         android:id="@+id/login_user"
